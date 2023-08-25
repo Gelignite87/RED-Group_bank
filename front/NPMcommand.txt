@@ -1,0 +1,5 @@
+    //yarn add
+    //yarn add -D
+webpack webpack-cli html-webpack-plugin mini-css-extract-plugin clean-webpack-plugin css-minimizer-webpack-plugin terser-webpack-plugin webpack-dev-server @babel/core @babel/preset-env babel-loader html-loader dotenv style-loader css-loader postcss-loader sass sass-loader        //библиотеки для webpack
+@trivago/prettier-plugin-sort-imports prettier      //сортировка импортов через prettier
+eslint                                              //включаем проверку от eslint

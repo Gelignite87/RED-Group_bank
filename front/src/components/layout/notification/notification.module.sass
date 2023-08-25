@@ -1,0 +1,28 @@
+.notification
+	position: fixed
+	top: 5.5rem
+	right: -20rem
+	background-color: rgb(255 74 74)
+	border-radius: 0.7rem
+	padding: 0.7rem 1.4rem
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16)
+	cursor: default
+	z-index: 1
+	animation: slideIn 3s
+	display: none
+	&.error,
+	&.success
+		display: block
+	&.success
+		background-color: #2e8677
+
+@keyframes slideIn
+	0%
+		right: -20rem
+		opacity: 0
+	30%,80%
+		right: 1.5rem
+		opacity: 1
+	100%
+		right: -20rem
+		opacity: 0
