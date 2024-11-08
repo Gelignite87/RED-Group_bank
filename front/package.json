@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve --mode development --open",
     "build": "webpack --mode production",
-    "start": "serve -s dist -l 3300"
+    "start": "serve -s dist -l tcp://0.0.0.0:3300"
   },
   "author": "FDA",
   "license": "ISC",
