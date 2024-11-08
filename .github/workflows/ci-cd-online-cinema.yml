@@ -1,29 +1,29 @@
-# name: "Workflow Bank"
-# on:
-#   workflow_dispatch:
-#   push:
-#     branches: ["main"]
-#   pull_request:
-#     types: [opened, edited, reopened]
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Check out the repository
-#         uses: actions/checkout@v2
-#       - name: Install sshpass
-#         run: |
-#           sudo apt-get update
-#           sudo apt-get install -y sshpass
-#         shell: bash
-#       - name: Deploy to server
-#         env:
-#           SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
-#         run: |
-#           sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no fda@176.57.213.148 << 'EOF'
-#             cd RED-Group_bank
-#             git pull
-#             make delete
-#             make create
-#           EOF
-#         shell: bash
+name: "Workflow Bank"
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, edited, reopened]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Install sshpass
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass
+        shell: bash
+      - name: Deploy to server
+        env:
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no fda@176.57.213.148 << 'EOF'
+            cd RED-Group_bank
+            git pull
+            make delete
+            make create
+          EOF
+        shell: bash
