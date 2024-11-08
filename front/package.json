@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack serve --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "start": "serve -s dist -l 3300"
   },
   "author": "FDA",
   "license": "ISC",
@@ -31,5 +32,7 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
 }

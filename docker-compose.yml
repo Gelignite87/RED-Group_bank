@@ -1,0 +1,34 @@
+version: "3.1"
+
+services:
+  node:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    image: gelignite/fda_node_bank
+    container_name: fda_node_bank
+    ports:
+      - 4300:4300
+    restart: always
+    # networks:
+    #   - bank-bridge
+  javascript:
+    depends_on:
+      - node
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    image: gelignite/fda_javascript_bank
+    container_name: fda_javascript_bank
+    ports:
+      - 3300:3300
+    restart: always
+    # networks:
+    #   - bank-bridge
+
+# каждый раз при создании новой сети внутренние ip адреса контейнеров меняются (сейчас 192.168.0.1 и далее по мере создания контейнеров)
+# чтобы упорядочить создание контейнеров изпользуем зависимости (depends_on: - node)
+# networks:
+#   bank-bridge:
+#     name: bank
+#     driver: bridge
