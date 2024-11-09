@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+// const TerserPlugin = require('terser-webpack-plugin')
 const { DefinePlugin } = require('webpack')
 require('dotenv').config()
 
@@ -49,14 +49,14 @@ module.exports = {
 		minimize: !isDev,
 		minimizer: [
 			new CssMinimizerPlugin(),
-			new TerserPlugin({
-				parallel: true,
-				terserOptions: {
-					format: {
-						comments: false
-					}
-				}
-			})
+			// new TerserPlugin({
+			// 	parallel: false,
+			// 	terserOptions: {
+			// 		format: {
+			// 			comments: false
+			// 		}
+			// 	}
+			// })
 		]
 	},
 	plugins,
