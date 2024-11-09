@@ -13,4 +13,4 @@ RUN yarn build
 #используемый порт (можно взять из ENV $PORT)
 EXPOSE 4300
 #CMD при запуске, запускаем приложение командой node app.js
-CMD ["yarn", "start:prod"]
+CMD npx prisma migrate deploy && yarn start:prod
