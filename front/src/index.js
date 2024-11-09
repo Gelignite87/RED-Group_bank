@@ -1,4 +1,4 @@
-import '@/styles/global.sass'
+import './styles/global.sass'
 
 import { Router } from './core/router/router'
 
