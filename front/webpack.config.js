@@ -7,7 +7,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { DefinePlugin } = require('webpack')
 require('dotenv').config()
 
-const isDev = process.env.NODE_ENV === 'development'
+const mode = process.env.NODE_ENV
+const isDev = mode === 'development'
 
 const plugins = [
 	new DefinePlugin({ 'process.env': JSON.stringify(process.env) }),
